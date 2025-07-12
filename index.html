@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PANEL PTERODACTYL BY JOJOSHOP</title>
+    <title>Panel Pterodactyl Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary: #6777ef;
             --primary-dark: #5156be;
-            --secondary: #1a1a2e; /* Warna gelap sebagai default */
+            --secondary: #1a1a2e;
             --secondary-light: #f4f6f9;
             --dark: #0f0f1a;
             --dark-light: #191d21;
@@ -572,6 +572,18 @@
             color: var(--text-light);
         }
 
+        /* Price Duration Info */
+        .duration-info {
+            font-size: 14px;
+            color: var(--success);
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .light-mode .duration-info {
+            color: var(--primary);
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -645,7 +657,7 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>𝗣𝗔𝗡𝗘𝗟 𝗣𝗧𝗘𝗥𝗢𝗗𝗔𝗖𝗧𝗬𝗟 𝗕𝗬 𝗝𝗢𝗝𝗢𝗦𝗛𝗢𝗣</h1>
+            <h1>Panel Pterodactyl Premium</h1>
             <p>Solusi terbaik untuk manajemen server game Anda dengan performa tinggi dan stabilitas maksimal. Dapatkan panel berkualitas dengan harga terjangkau.</p>
             <a href="#pricing" class="btn">Lihat Paket</a>
             <a href="https://wa.me/6283161207895" class="btn btn-outline">Hubungi Kami</a>
@@ -671,13 +683,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 1GB</li>
                             <li><i class="fas fa-check"></i> CPU 1 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 1000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 10GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="1GB RAM" data-price="2000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 2.000), 6 Bulan (Rp 4.000), 12 Bulan (Rp 6.000)</div>
                     </div>
                 </div>
                 
@@ -692,13 +705,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 2GB</li>
                             <li><i class="fas fa-check"></i> CPU 2 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 2000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 20GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="2GB RAM" data-price="3000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 3.000), 6 Bulan (Rp 6.000), 12 Bulan (Rp 9.000)</div>
                     </div>
                 </div>
                 
@@ -713,13 +727,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 3GB</li>
                             <li><i class="fas fa-check"></i> CPU 3 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 3000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 30GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="3GB RAM" data-price="4000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 4.000), 6 Bulan (Rp 8.000), 12 Bulan (Rp 12.000)</div>
                     </div>
                 </div>
                 
@@ -734,13 +749,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 4GB</li>
                             <li><i class="fas fa-check"></i> CPU 4 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 4000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 40GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="4GB RAM" data-price="5000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 5.000), 6 Bulan (Rp 10.000), 12 Bulan (Rp 15.000)</div>
                     </div>
                 </div>
                 
@@ -755,13 +771,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 5GB</li>
                             <li><i class="fas fa-check"></i> CPU 5 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 5000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 50GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="5GB RAM" data-price="6000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 6.000), 6 Bulan (Rp 12.000), 12 Bulan (Rp 18.000)</div>
                     </div>
                 </div>
                 
@@ -776,13 +793,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 6GB</li>
                             <li><i class="fas fa-check"></i> CPU 6 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 6000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 60GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="6GB RAM" data-price="7000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 7.000), 6 Bulan (Rp 14.000), 12 Bulan (Rp 21.000)</div>
                     </div>
                 </div>
                 
@@ -797,13 +815,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 7GB</li>
                             <li><i class="fas fa-check"></i> CPU 7 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 7000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 70GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="7GB RAM" data-price="8000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 8.000), 6 Bulan (Rp 16.000), 12 Bulan (Rp 24.000)</div>
                     </div>
                 </div>
                 
@@ -818,13 +837,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 8GB</li>
                             <li><i class="fas fa-check"></i> CPU 8 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 8000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 80GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="8GB RAM" data-price="9000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 9.000), 6 Bulan (Rp 18.000), 12 Bulan (Rp 27.000)</div>
                     </div>
                 </div>
                 
@@ -839,13 +859,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 9GB</li>
                             <li><i class="fas fa-check"></i> CPU 9 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 9000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 90GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="9GB RAM" data-price="10000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 10.000), 6 Bulan (Rp 20.000), 12 Bulan (Rp 30.000)</div>
                     </div>
                 </div>
                 
@@ -860,13 +881,14 @@
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 10GB</li>
                             <li><i class="fas fa-check"></i> CPU 10 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 10000GB</li>
+                            <li><i class="fas fa-check"></i> Storage 100GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="10GB RAM" data-price="11000">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 11.000), 6 Bulan (Rp 22.000), 12 Bulan (Rp 33.000)</div>
                     </div>
                 </div>
                 
@@ -874,14 +896,14 @@
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Unlimited RAM</h3>
-                        <div class="pricing-price">12.000</div>
+                        <div class="pricing-price">Custom</div>
                         <div class="pricing-period">Hubungi Kami</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM Unlimited</li>
-                            <li><i class="fas fa-check"></i> CPU Unlimited</li>
-                            <li><i class="fas fa-check"></i> Storage Unlimited</li>
+                            <li><i class="fas fa-check"></i> CPU Dedicated</li>
+                            <li><i class="fas fa-check"></i> Storage SSD NVMe</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
@@ -905,7 +927,7 @@
                 <div class="contact-card">
                     <i class="fab fa-whatsapp"></i>
                     <h3>WhatsApp</h3>
-                    <p>+62 831-6120-7895</p>
+                    <p>+62 831-6120-7896</p>
                     <a href="https://wa.me/6283161207895" class="btn" style="margin-top: 15px;">Chat Sekarang</a>
                 </div>
                 
@@ -965,14 +987,21 @@
                     <input type="text" id="plan" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="price">Harga</label>
+                    <label for="price">Harga per Bulan</label>
                     <input type="text" id="price" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="duration">Durasi (Bulan)</label>
+                    <label for="duration">Durasi</label>
                     <select id="duration">
-                        <option value="1">1 Bulan</option>
+                        <option value="1">1 Bulan (Harga Normal)</option>
+                        <option value="3">3 Bulan (1x Harga)</option>
+                        <option value="6">6 Bulan (2x Harga)</option>
+                        <option value="12">12 Bulan (3x Harga)</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="totalPrice">Total Harga</label>
+                    <input type="text" id="totalPrice" readonly>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-outline" id="cancelOrder">Batal</button>
@@ -1040,6 +1069,22 @@
         const orderSuccess = document.getElementById('orderSuccess');
         const planInput = document.getElementById('plan');
         const priceInput = document.getElementById('price');
+        const durationSelect = document.getElementById('duration');
+        const totalPriceInput = document.getElementById('totalPrice');
+        
+        // Calculate total price based on duration
+        function calculateTotalPrice() {
+            const basePrice = parseInt(priceInput.value.replace(/\D/g, ''));
+            const duration = parseInt(durationSelect.value);
+            
+            let multiplier = 1;
+            if (duration === 3) multiplier = 1; // 3 bulan = 1x harga
+            else if (duration === 6) multiplier = 2; // 6 bulan = 2x harga
+            else if (duration === 12) multiplier = 3; // 12 bulan = 3x harga
+            
+            const totalPrice = basePrice * multiplier;
+            totalPriceInput.value = 'Rp ' + totalPrice.toLocaleString('id-ID');
+        }
 
         // Open modal when order button is clicked
         orderBtns.forEach(btn => {
@@ -1050,11 +1095,17 @@
                 planInput.value = plan;
                 priceInput.value = 'Rp ' + parseInt(price).toLocaleString('id-ID');
                 
+                // Calculate initial total price
+                calculateTotalPrice();
+                
                 modal.style.display = 'block';
                 orderForm.style.display = 'block';
                 orderSuccess.style.display = 'none';
             });
         });
+
+        // Update total price when duration changes
+        durationSelect.addEventListener('change', calculateTotalPrice);
 
         // Close modal
         function closeModal() {
@@ -1079,17 +1130,14 @@
             const whatsapp = document.getElementById('whatsapp').value;
             const plan = planInput.value;
             const price = priceInput.value;
-            const duration = document.getElementById('duration').value;
+            const duration = durationSelect.options[durationSelect.selectedIndex].text;
+            const totalPrice = totalPriceInput.value;
             
             // Validate inputs
             if (!name || !email || !whatsapp) {
                 alert('Harap lengkapi semua field!');
                 return;
             }
-            
-            // Calculate total price
-            const priceNum = parseInt(price.replace(/\D/g, ''));
-            const totalPrice = priceNum * parseInt(duration);
             
             // Prepare WhatsApp message
             const message = `Halo, saya ingin memesan Panel Pterodactyl dengan detail berikut:
@@ -1098,8 +1146,8 @@ Nama: ${name}
 Email: ${email}
 WhatsApp: ${whatsapp}
 Paket: ${plan}
-Durasi: ${duration} Bulan
-Total Harga: Rp ${totalPrice.toLocaleString('id-ID')}
+Durasi: ${duration}
+Total Harga: ${totalPrice}
 
 Silakan konfirmasi ketersediaan dan cara pembayaran. Terima kasih.`;
             
@@ -1119,7 +1167,7 @@ Silakan konfirmasi ketersediaan dan cara pembayaran. Terima kasih.`;
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
             document.getElementById('whatsapp').value = '';
-            document.getElementById('duration').value = '1';
+            durationSelect.value = '1';
         });
     </script>
 </body>
