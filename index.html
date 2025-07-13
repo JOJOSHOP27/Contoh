@@ -507,7 +507,8 @@
         }
 
         .form-group input, 
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #2a2a3c;
@@ -518,14 +519,16 @@
         }
 
         .light-mode .form-group input,
-        .light-mode .form-group select {
+        .light-mode .form-group select,
+        .light-mode .form-group textarea {
             background-color: var(--secondary-light);
             border-color: #ddd;
             color: var(--text-light);
         }
 
         .form-group input:focus, 
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 5px rgba(103, 119, 239, 0.5);
@@ -582,6 +585,20 @@
 
         .light-mode .duration-info {
             color: var(--primary);
+        }
+
+        /* Special Offer Tag */
+        .special-offer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--warning);
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            z-index: 1;
         }
 
         @media (max-width: 768px) {
@@ -657,8 +674,8 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Panel Pterodactyl Premium</h1>
-            <p>Solusi terbaik untuk manajemen server game Anda dengan performa tinggi dan stabilitas maksimal. Dapatkan panel berkualitas dengan harga terjangkau.</p>
+            <h1>PANEL PTERODACTYL BY JOJOSHOP</h1>
+            <p>Solusi terbaik untuk manajemen hostinger Anda dengan performa tinggi dan stabilitas maksimal. Dapatkan panel berkualitas dengan harga terjangkau.</p>
             <a href="#pricing" class="btn">Lihat Paket</a>
             <a href="https://wa.me/6283161207895" class="btn btn-outline">Hubungi Kami</a>
         </div>
@@ -668,7 +685,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Paket Harga</h2>
-                <p>Pilih paket yang sesuai dengan kebutuhan server game Anda. Kami menawarkan berbagai pilihan RAM dengan harga kompetitif.</p>
+                <p>Pilih paket yang sesuai dengan kebutuhan server panel Anda. Kami menawarkan berbagai pilihan RAM dengan harga kompetitif.</p>
             </div>
             
             <div class="pricing-grid">
@@ -677,20 +694,20 @@
                     <div class="pricing-header">
                         <h3>1GB RAM</h3>
                         <div class="pricing-price">Rp 2.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 1GB</li>
                             <li><i class="fas fa-check"></i> CPU 1 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 10GB</li>
+                            <li><i class="fas fa-check"></i> Storage 1000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="1GB RAM" data-price="2000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 2.000), 6 Bulan (Rp 4.000), 12 Bulan (Rp 6.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 2.000)</div>
                     </div>
                 </div>
                 
@@ -699,20 +716,20 @@
                     <div class="pricing-header">
                         <h3>2GB RAM</h3>
                         <div class="pricing-price">Rp 3.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 2GB</li>
                             <li><i class="fas fa-check"></i> CPU 2 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 20GB</li>
+                            <li><i class="fas fa-check"></i> Storage 2000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="2GB RAM" data-price="3000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 3.000), 6 Bulan (Rp 6.000), 12 Bulan (Rp 9.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 3.000)</div>
                     </div>
                 </div>
                 
@@ -721,20 +738,20 @@
                     <div class="pricing-header">
                         <h3>3GB RAM</h3>
                         <div class="pricing-price">Rp 4.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 3GB</li>
                             <li><i class="fas fa-check"></i> CPU 3 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 30GB</li>
+                            <li><i class="fas fa-check"></i> Storage 3000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="3GB RAM" data-price="4000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 4.000), 6 Bulan (Rp 8.000), 12 Bulan (Rp 12.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 4.000)</div>
                     </div>
                 </div>
                 
@@ -743,20 +760,20 @@
                     <div class="pricing-header">
                         <h3>4GB RAM</h3>
                         <div class="pricing-price">Rp 5.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 4GB</li>
                             <li><i class="fas fa-check"></i> CPU 4 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 40GB</li>
+                            <li><i class="fas fa-check"></i> Storage 4000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="4GB RAM" data-price="5000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 5.000), 6 Bulan (Rp 10.000), 12 Bulan (Rp 15.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 5.000)</div>
                     </div>
                 </div>
                 
@@ -765,20 +782,20 @@
                     <div class="pricing-header">
                         <h3>5GB RAM</h3>
                         <div class="pricing-price">Rp 6.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 5GB</li>
                             <li><i class="fas fa-check"></i> CPU 5 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 50GB</li>
+                            <li><i class="fas fa-check"></i> Storage 5000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="5GB RAM" data-price="6000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 6.000), 6 Bulan (Rp 12.000), 12 Bulan (Rp 18.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 6.000)</div>
                     </div>
                 </div>
                 
@@ -787,20 +804,20 @@
                     <div class="pricing-header">
                         <h3>6GB RAM</h3>
                         <div class="pricing-price">Rp 7.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 6GB</li>
                             <li><i class="fas fa-check"></i> CPU 6 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 60GB</li>
+                            <li><i class="fas fa-check"></i> Storage 6000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="6GB RAM" data-price="7000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 7.000), 6 Bulan (Rp 14.000), 12 Bulan (Rp 21.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 7.000), 3 Bulan (Rp 14.000), 6 Bulan (Rp 21.000)</div>
                     </div>
                 </div>
                 
@@ -809,20 +826,20 @@
                     <div class="pricing-header">
                         <h3>7GB RAM</h3>
                         <div class="pricing-price">Rp 8.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 7GB</li>
                             <li><i class="fas fa-check"></i> CPU 7 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 70GB</li>
+                            <li><i class="fas fa-check"></i> Storage 7000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="7GB RAM" data-price="8000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 8.000), 6 Bulan (Rp 16.000), 12 Bulan (Rp 24.000)</div>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp 8.000), 3 Bulan (Rp 16.000), 6 Bulan (Rp 24.000), 12 Bulan (35.000)</div>
                     </div>
                 </div>
                 
@@ -831,20 +848,20 @@
                     <div class="pricing-header">
                         <h3>8GB RAM</h3>
                         <div class="pricing-price">Rp 9.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 8GB</li>
                             <li><i class="fas fa-check"></i> CPU 8 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 80GB</li>
+                            <li><i class="fas fa-check"></i> Storage 8000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="8GB RAM" data-price="9000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 9.000), 6 Bulan (Rp 18.000), 12 Bulan (Rp 27.000)</div>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 9.000), 6 Bulan (Rp 18.000), 12 Bulan (Rp 27.000), 12 Bulan (48.000)</div>
                     </div>
                 </div>
                 
@@ -853,20 +870,20 @@
                     <div class="pricing-header">
                         <h3>9GB RAM</h3>
                         <div class="pricing-price">Rp 10.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 9GB</li>
                             <li><i class="fas fa-check"></i> CPU 9 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 90GB</li>
+                            <li><i class="fas fa-check"></i> Storage 9000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="9GB RAM" data-price="10000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 10.000), 6 Bulan (Rp 20.000), 12 Bulan (Rp 30.000)</div>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 10.000), 6 Bulan (Rp 20.000), 12 Bulan (Rp 30.000), 12 Bulan (50.000)</div>
                     </div>
                 </div>
                 
@@ -875,41 +892,43 @@
                     <div class="pricing-header">
                         <h3>10GB RAM</h3>
                         <div class="pricing-price">Rp 11.000</div>
-                        <div class="pricing-period">per bulan</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> RAM 10GB</li>
                             <li><i class="fas fa-check"></i> CPU 10 Core</li>
-                            <li><i class="fas fa-check"></i> Storage 100GB</li>
+                            <li><i class="fas fa-check"></i> Storage 10000GB</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
                             <li><i class="fas fa-check"></i> DDoS Protection</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
                         <button class="btn btn-block order-btn" data-plan="10GB RAM" data-price="11000">Pesan Sekarang</button>
-                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 11.000), 6 Bulan (Rp 22.000), 12 Bulan (Rp 33.000)</div>
+                        <div class="duration-info">Harga khusus: 3 Bulan (Rp 11.000), 6 Bulan (Rp 22.000), 12 Bulan (Rp 33.000), 12 Bulan (65.000)</div>
                     </div>
                 </div>
                 
                 <!-- Paket Unlimited -->
                 <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Unlimited RAM</h3>
-                        <div class="pricing-price">Custom</div>
-                        <div class="pricing-period">Hubungi Kami</div>
+                     <div class="pricing-header">
+                        <h3>RAM UNLIMITED</h3>
+                        <div class="pricing-price">Rp 12.000</div>
+                        <div class="pricing-period">SPEK R32C8</div>
                     </div>
                     <div class="pricing-body">
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> RAM Unlimited</li>
-                            <li><i class="fas fa-check"></i> CPU Dedicated</li>
-                            <li><i class="fas fa-check"></i> Storage SSD NVMe</li>
+                            <li><i class="fas fa-check"></i> RAM UNLIMITED</li>
+                            <li><i class="fas fa-check"></i> CPU UNLIMITED</li>
+                            <li><i class="fas fa-check"></i> Storage UNLIMITED</li>
                             <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
-                            <li><i class="fas fa-check"></i> DDoS Protection</li>
+                            <li><i class="fas fa-check"></i> DDoS Protection Premium</li>
+                            <li><i class="fas fa-check"></i> Prioritas Support 24/7</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
-                        <a href="https://wa.me/6283161207895?text=Saya%20tertarik%20untuk%20membeli%20Panel%20Pterodactyl%20Unlimited%20RAM" class="btn btn-block">Hubungi Kami</a>
+                        <button class="btn btn-block order-btn" data-plan="Unlimited RAM" data-price="custom">Pesan Sekarang</button>
+                        <div class="duration-info">Harga khusus: 1 Bulan (Rp12.000), 3 Bulan (24.000), 6 Bulan (45.000), 12 Bulan (80.000)</div>
                     </div>
                 </div>
             </div>
@@ -927,14 +946,14 @@
                 <div class="contact-card">
                     <i class="fab fa-whatsapp"></i>
                     <h3>WhatsApp</h3>
-                    <p>+62 831-6120-7896</p>
+                    <p>+62 831-6120-7895</p>
                     <a href="https://wa.me/6283161207895" class="btn" style="margin-top: 15px;">Chat Sekarang</a>
                 </div>
                 
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
-                    <p>admin@pterodactyl-panel.com</p>
+                    <p>jojocomunity09@gmail.com</p>
                 </div>
                 
                 <div class="contact-card">
@@ -950,7 +969,7 @@
         <div class="container footer-content">
             <div class="logo" style="color: var(--light); margin-bottom: 20px;">
                 <i class="fas fa-server"></i>
-                <span>Pterodactyl Panel</span>
+                <span>PANEL PTERODACTYL</span>
             </div>
             
             <div class="social-links">
@@ -987,21 +1006,25 @@
                     <input type="text" id="plan" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="price">Harga per Bulan</label>
+                    <label for="price">Harga SPEK R32C8</label>
                     <input type="text" id="price" readonly>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="durationGroup">
                     <label for="duration">Durasi</label>
                     <select id="duration">
                         <option value="1">1 Bulan (Harga Normal)</option>
-                        <option value="3">3 Bulan (1x Harga)</option>
-                        <option value="6">6 Bulan (2x Harga)</option>
-                        <option value="12">12 Bulan (3x Harga)</option>
+                        <option value="3">3 Bulan 📦</option>
+                        <option value="6">6 Bulan 📦</option>
+                        <option value="12">12 Bulan 📦</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="totalPriceGroup">
                     <label for="totalPrice">Total Harga</label>
                     <input type="text" id="totalPrice" readonly>
+                </div>
+                <div class="form-group" id="requirementsGroup" style="display: none;">
+                    <label for="requirements">Kebutuhan Spesifik (CPU, RAM, Storage)</label>
+                    <textarea id="requirements" placeholder="Jelaskan kebutuhan spesifik Anda untuk paket Unlimited" rows="3"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-outline" id="cancelOrder">Batal</button>
@@ -1071,10 +1094,14 @@
         const priceInput = document.getElementById('price');
         const durationSelect = document.getElementById('duration');
         const totalPriceInput = document.getElementById('totalPrice');
+        const requirementsGroup = document.getElementById('requirementsGroup');
+        const requirementsInput = document.getElementById('requirements');
+        const durationGroup = document.getElementById('durationGroup');
+        const totalPriceGroup = document.getElementById('totalPriceGroup');
         
         // Calculate total price based on duration
         function calculateTotalPrice() {
-            const basePrice = parseInt(priceInput.value.replace(/\D/g, ''));
+            const basePrice = parseInt(priceInput.value.replace(/\D/g, '') || 0;
             const duration = parseInt(durationSelect.value);
             
             let multiplier = 1;
@@ -1083,7 +1110,7 @@
             else if (duration === 12) multiplier = 3; // 12 bulan = 3x harga
             
             const totalPrice = basePrice * multiplier;
-            totalPriceInput.value = 'Rp ' + totalPrice.toLocaleString('id-ID');
+            totalPriceInput.value = totalPrice > 0 ? 'Rp ' + totalPrice.toLocaleString('id-ID') : 'Custom (Diskon Durasi Tersedia)';
         }
 
         // Open modal when order button is clicked
@@ -1093,10 +1120,19 @@
                 const price = this.getAttribute('data-price');
                 
                 planInput.value = plan;
-                priceInput.value = 'Rp ' + parseInt(price).toLocaleString('id-ID');
+                priceInput.value = price === 'custom' ? 'Custom (Negosiasi)' : 'Rp ' + parseInt(price).toLocaleString('id-ID');
                 
-                // Calculate initial total price
-                calculateTotalPrice();
+                // Show/hide fields based on plan
+                if (plan === 'Unlimited RAM') {
+                    requirementsGroup.style.display = 'block';
+                    durationGroup.style.display = 'none';
+                    totalPriceGroup.style.display = 'none';
+                } else {
+                    requirementsGroup.style.display = 'none';
+                    durationGroup.style.display = 'block';
+                    totalPriceGroup.style.display = 'block';
+                    calculateTotalPrice();
+                }
                 
                 modal.style.display = 'block';
                 orderForm.style.display = 'block';
@@ -1130,8 +1166,9 @@
             const whatsapp = document.getElementById('whatsapp').value;
             const plan = planInput.value;
             const price = priceInput.value;
-            const duration = durationSelect.options[durationSelect.selectedIndex].text;
-            const totalPrice = totalPriceInput.value;
+            const duration = plan === 'Unlimited RAM' ? 'Custom' : durationSelect.options[durationSelect.selectedIndex].text;
+            const totalPrice = plan === 'Unlimited RAM' ? 'Custom (Diskon Durasi Tersedia)' : totalPriceInput.value;
+            const requirements = requirementsInput.value;
             
             // Validate inputs
             if (!name || !email || !whatsapp) {
@@ -1139,17 +1176,32 @@
                 return;
             }
             
+            if (plan === 'Unlimited RAM' && !requirements) {
+                alert('Harap jelaskan kebutuhan spesifik Anda untuk paket Unlimited');
+                return;
+            }
+            
             // Prepare WhatsApp message
-            const message = `Halo, saya ingin memesan Panel Pterodactyl dengan detail berikut:
+            let message = `Halo Jojo, saya ingin memesan Panel Pterodactyl dengan detail berikut:
             
 Nama: ${name}
 Email: ${email}
 WhatsApp: ${whatsapp}
-Paket: ${plan}
+Paket: ${plan}`;
+
+            if (plan === 'Unlimited RAM') {
+                message += `
+Kebutuhan Spesifik:
+${requirements}
+
+Kami akan menghubungi Anda segera untuk penawaran harga khusus.`;
+            } else {
+                message += `
 Durasi: ${duration}
 Total Harga: ${totalPrice}
 
 Silakan konfirmasi ketersediaan dan cara pembayaran. Terima kasih.`;
+            }
             
             // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
@@ -1168,6 +1220,7 @@ Silakan konfirmasi ketersediaan dan cara pembayaran. Terima kasih.`;
             document.getElementById('email').value = '';
             document.getElementById('whatsapp').value = '';
             durationSelect.value = '1';
+            requirementsInput.value = '';
         });
     </script>
 </body>
