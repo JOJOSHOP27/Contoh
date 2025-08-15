@@ -1,1 +1,144 @@
-.
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>JOJOSHOP - Order History</title>
+  <link rel="icon" href="https://files.catbox.moe/3gnoq1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--primary:#6366f1;--darker:#020617;--light:#f8fafc;--glass-border:rgba(255,255,255,.1)}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui}
+    body{background-color:var(--darker);color:var(--light);min-height:100vh}
+    .container{max-width:1000px;margin:0 auto;padding:2rem}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+    .logo{display:flex;gap:12px;align-items:center;text-decoration:none}
+    .logo img{height:50px;width:50px;border-radius:12px;border:2px solid var(--primary)}
+    .logo h1{font-size:1.4rem;background:linear-gradient(to right,#8b5cf6,var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+    .nav-links{display:flex;gap:1.25rem;align-items:center}
+    .nav-links a{color:#e2e8f0;text-decoration:none;font-weight:600}
+    .badge-count{background:#ef4444;color:#fff;border-radius:999px;padding:.1rem .5rem;font-size:.75rem;margin-left:.35rem}
+    h2{font-size:1.6rem;margin:1rem 0}
+    .order-history{background:linear-gradient(145deg,rgba(30,41,59,.7),rgba(15,23,42,.9));border:1px solid var(--glass-border);border-radius:16px;padding:1.25rem}
+    .order-item{display:flex;justify-content:space-between;gap:1rem;align-items:center;border-bottom:1px solid var(--glass-border);padding:.9rem 0}
+    .order-item:last-child{border-bottom:none}
+    .order-product{font-weight:700}
+    .order-price{color:#6366f1;font-weight:700}
+    .order-date{color:#94a3b8;font-size:.9rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:10px;border:none;cursor:pointer}
+    .btn-danger{background:#ef4444;color:#fff}
+    .btn-outline{border:2px solid var(--primary);background:transparent;color:var(--primary)}
+    .tools{display:flex;gap:.6rem;flex-wrap:wrap}
+    .empty{color:#94a3b8;text-align:center;padding:1.25rem}
+    .paybox{margin-top:1rem;background:rgba(255,255,255,.03);border:1px dashed var(--glass-border);border-radius:12px;padding:1rem}
+    footer{text-align:center;color:#94a3b8;border-top:1px solid var(--glass-border);padding:2rem 0;margin-top:2rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo">
+        <img src="https://files.catbox.moe/3gnoq1.jpg" alt="JOJOSHOP Logo">
+        <h1>JOJOSHOP</h1>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="orders.html">My Orders <span id="navCount" class="badge-count" style="display:none">0</span></a>
+      </nav>
+    </header>
+
+    <h2><i class="fas fa-history"></i> Order History</h2>
+
+    <div class="order-history">
+      <div id="orders-list"></div>
+
+      <div class="tools" style="margin-top:1rem">
+        <button class="btn btn-outline" id="exportBtn"><i class="fas fa-file-export"></i> Export (.json)</button>
+        <button class="btn btn-danger" id="clearAllBtn"><i class="fas fa-trash"></i> Hapus Semua</button>
+      </div>
+
+      <div class="paybox">
+        <strong>Metode Pembayaran:</strong>
+        <div style="margin-top:.4rem;line-height:1.6">
+          DANA: <code>087733226392</code><br>
+          GOPAY: <code>087733226392</code><br>
+          OVO: <code>087733226392</code>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 JOJOSHOP Pterodactyl Panel Hosting. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const LS_KEY = 'jojoshop_orders';
+
+    function updateNavCount(){
+      const el = document.getElementById('navCount');
+      const orders = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      if(orders.length>0){ el.style.display='inline-block'; el.textContent = orders.length; }
+      else { el.style.display='none'; }
+    }
+
+    function renderOrders(){
+      const box = document.getElementById('orders-list');
+      const orders = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      updateNavCount();
+
+      if(orders.length===0){
+        box.innerHTML = '<div class="empty">Belum ada pesanan. Silakan kembali ke halaman produk untuk memesan.</div>';
+        return;
+      }
+
+      box.innerHTML = '';
+      orders.forEach((o, idx)=>{
+        const row = document.createElement('div');
+        row.className = 'order-item';
+        row.innerHTML = `
+          <div style="flex:1">
+            <div class="order-product">${o.product}</div>
+            <div class="order-date">${o.date || ''}</div>
+          </div>
+          <div class="order-price">${o.price}</div>
+          <div>
+            <button class="btn btn-danger" data-index="${idx}"><i class="fas fa-times"></i> Hapus</button>
+          </div>
+        `;
+        box.appendChild(row);
+      });
+
+      // bind delete buttons
+      box.querySelectorAll('.btn-danger[data-index]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const i = Number(btn.getAttribute('data-index'));
+          const orders = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+          orders.splice(i,1);
+          localStorage.setItem(LS_KEY, JSON.stringify(orders));
+          renderOrders();
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      renderOrders();
+      document.getElementById('clearAllBtn').addEventListener('click', ()=>{
+        if(confirm('Yakin hapus semua pesanan?')){
+          localStorage.setItem(LS_KEY, JSON.stringify([]));
+          renderOrders();
+        }
+      });
+      document.getElementById('exportBtn').addEventListener('click', ()=>{
+        const data = localStorage.getItem(LS_KEY) || '[]';
+        const blob = new Blob([data], {type:'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'jojoshop_orders.json'; a.click();
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+</body>
+</html>
