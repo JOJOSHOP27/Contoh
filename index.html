@@ -1,102 +1,286 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOJO HOSTING - Order</title>
-<style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #333; color: #fff; padding: 15px; text-align: center; }
-    .container { padding: 20px; }
-    .product { background: #fff; border-radius: 10px; padding: 15px; margin-bottom: 15px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    .product img { width: 100%; border-radius: 10px; }
-    .product h3 { margin: 10px 0 5px; }
-    .product p { margin: 0 0 10px; }
-    .btn { background: #25d366; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
-    .btn:hover { background: #1ebc57; }
-    #orderList { background: white; padding: 15px; border-radius: 10px; }
-    .order-item { display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
-    .delete-btn { background: red; color: white; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOJOSHOP - Premium Pterodactyl Panel Hosting</title>
+  <link rel="icon" href="https://files.catbox.moe/3gnoq1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --primary:#6366f1;--primary-dark:#4f46e5;--dark:#0f172a;--darker:#020617;--light:#f8fafc;--glass-border:rgba(255,255,255,.1);--tech-glow:rgba(99,102,241,.3);--whatsapp:#25D366
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto}
+    body{background-color:var(--darker);color:var(--light);background-image:radial-gradient(circle at 25% 25%,var(--tech-glow) 0%,transparent 50%),radial-gradient(circle at 75% 75%,var(--tech-glow) 0%,transparent 50%);min-height:100vh;overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:2rem}
+    header{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;margin-bottom:1.2rem}
+    .logo{display:flex;gap:12px;align-items:center;text-decoration:none}
+    .logo img{height:50px;width:50px;border-radius:12px;border:2px solid var(--primary);box-shadow:0 0 20px var(--primary)}
+    .logo h1{font-size:1.6rem;background:linear-gradient(to right,#8b5cf6,var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+    .nav-links{display:flex;gap:1.25rem;align-items:center}
+    .nav-links a{color:#e2e8f0;text-decoration:none;font-weight:600}
+    .badge-count{background:#ef4444;color:#fff;border-radius:999px;padding:.1rem .5rem;font-size:.75rem;margin-left:.35rem}
+    .hero{text-align:center;padding:2.5rem 0 1rem}
+    .hero h2{font-size:2.4rem;font-weight:800;background:linear-gradient(to right,#8b5cf6,var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#94a3b8;max-width:720px;margin:.75rem auto 0}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border-radius:12px;border:none;text-decoration:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),#8b5cf6);color:#fff}
+    .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
+    .product-card{background:linear-gradient(145deg,rgba(30,41,59,.7),rgba(15,23,42,.9));border:1px solid var(--glass-border);border-radius:16px;padding:1.25rem}
+    .product-image{width:100%;height:220px;object-fit:contain;border-radius:8px;border:1px solid var(--glass-border);background:rgba(255,255,255,.04);margin-bottom:1rem}
+    .product-card h3{font-size:1.25rem;margin:.25rem 0 .5rem}
+    .price{font-size:1.6rem;font-weight:800;color:var(--primary)}
+    .specs{list-style:none;margin:1rem 0;color:#cbd5e1}
+    .specs li{margin:.4rem 0;display:flex;gap:.6rem;align-items:center}
+    .btn-whatsapp{background-color:var(--whatsapp);color:#fff;width:100%;justify-content:center}
+    footer{text-align:center;color:#94a3b8;border-top:1px solid var(--glass-border);padding:2rem 0;margin-top:2rem}
+    @media (max-width:768px){.hero h2{font-size:1.9rem}}
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo">
+        <img src="https://files.catbox.moe/3gnoq1.jpg" alt="JOJOSHOP Logo">
+        <h1>JOJOSHOP</h1>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="orders.html">My Orders <span id="navCount" class="badge-count" style="display:none">0</span></a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<header>
-    <h1>JOJO HOSTING</h1>
-    <button onclick="showOrders()">📦 Lihat Daftar Pesanan</button>
-</header>
+    <section class="hero">
+      <h2>Premium Pterodactyl Panel Hosting</h2>
+      <p>High-performance panel server hosting dengan setup instan & uptime 99.9%. Infrastruktur R32C8 yang stabil.</p>
+      <div style="margin-top:1rem">
+        <a href="#products" class="btn btn-primary"><i class="fas fa-rocket"></i> Get Started</a>
+        <a href="orders.html" class="btn btn-outline"><i class="fas fa-history"></i> Order History</a>
+      </div>
+    </section>
 
-<div class="container" id="productContainer">
-    <div class="product">
-        <img src="https://via.placeholder.com/400x200" alt="Produk 1">
-        <h3>Hosting Paket A</h3>
-        <p>Harga: Rp50.000/bulan</p>
-        <button class="btn" onclick="addToOrder('Hosting Paket A', 50000)">Order Via WhatsApp</button>
-    </div>
-    <div class="product">
-        <img src="https://via.placeholder.com/400x200" alt="Produk 2">
-        <h3>Hosting Paket B</h3>
-        <p>Harga: Rp100.000/bulan</p>
-        <button class="btn" onclick="addToOrder('Hosting Paket B', 100000)">Order Via WhatsApp</button>
-    </div>
-</div>
+    <section class="products" id="products">
+      <!-- === PRODUK & HARGA SAMA PERSIS === -->
+      <!-- RAM 1GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="1GB RAM Panel">
+        <h3>RAM 1GB</h3>
+        <div class="price">Rp 2.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 1GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 1GB RAM" data-price="Rp 2.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
 
-<div class="container" id="orderList" style="display:none;">
-    <h2>Daftar Pesanan</h2>
-    <div id="orders"></div>
-    <button class="btn" style="background:red;" onclick="clearOrders()">Hapus Semua Pesanan</button>
-</div>
+      <!-- RAM 2GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="2GB RAM Panel">
+        <h3>RAM 2GB</h3>
+        <div class="price">Rp 3.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 2GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 2GB RAM" data-price="Rp 3.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
 
-<script>
-    function addToOrder(productName, price) {
-        let orders = JSON.parse(localStorage.getItem("orders")) || [];
-        orders.push({ name: productName, price: price });
-        localStorage.setItem("orders", JSON.stringify(orders));
-        alert(productName + " telah ditambahkan ke daftar pesanan!");
-        
-        // Kirim ke WhatsApp
-        let phone = "6287733226392"; // ganti dengan nomor WA
-        let message = `Halo, saya ingin memesan ${productName} - Harga: Rp${price.toLocaleString()}`;
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+      <!-- RAM 3GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="3GB RAM Panel">
+        <h3>RAM 3GB</h3>
+        <div class="price">Rp 4.500 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 3GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 3GB RAM" data-price="Rp 4.500">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 4GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="4GB RAM Panel">
+        <h3>RAM 4GB</h3>
+        <div class="price">Rp 5.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 4GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 4GB RAM" data-price="Rp 5.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 5GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="5GB RAM Panel">
+        <h3>RAM 5GB</h3>
+        <div class="price">Rp 6.500 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 5GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 5GB RAM" data-price="Rp 6.500">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 6GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="6GB RAM Panel">
+        <h3>RAM 6GB</h3>
+        <div class="price">Rp 7.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 6GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 6GB RAM" data-price="Rp 7.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 7GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="7GB RAM Panel">
+        <h3>RAM 7GB</h3>
+        <div class="price">Rp 8.500 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 7GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 7GB RAM" data-price="Rp 8.500">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 8GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="8GB RAM Panel">
+        <h3>RAM 8GB</h3>
+        <div class="price">Rp 9.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 8GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 8GB RAM" data-price="Rp 9.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 9GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="9GB RAM Panel">
+        <h3>RAM 9GB</h3>
+        <div class="price">Rp 10.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 9GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 9GB RAM" data-price="Rp 10.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- RAM 10GB -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="10GB RAM Panel">
+        <h3>RAM 10GB</h3>
+        <div class="price">Rp 11.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> 10GB Dedicated RAM</li>
+          <li><i class="fas fa-microchip"></i> High Performance</li>
+          <li><i class="fas fa-shield-alt"></i> DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl 10GB RAM" data-price="Rp 11.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+
+      <!-- UNLIMITED -->
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ld1o34.jpg" class="product-image" alt="UNLIMITED RAM Panel">
+        <h3>RAM UNLIMITED</h3>
+        <div class="price">Rp 12.000 <span style="color:#94a3b8;font-size:.9rem;font-weight:500">/month</span></div>
+        <ul class="specs">
+          <li><i class="fas fa-memory"></i> UNLIMITED RAM</li>
+          <li><i class="fas fa-microchip"></i> Maximum Performance</li>
+          <li><i class="fas fa-shield-alt"></i> Premium DDoS Protection</li>
+          <li><i class="fas fa-rocket"></i> Access 1 bulan</li>
+        </ul>
+        <button class="btn btn-whatsapp order-btn" data-product="Panel Pterodactyl UNLIMITED RAM" data-price="Rp 12.000">
+          <i class="fab fa-whatsapp"></i> Order Via WhatsApp
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 JOJOSHOP Pterodactyl Panel Hosting. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // ====== KONFIG ======
+    const whatsappNumber = '6283143122032'; // nomor WA tujuan
+    const LS_KEY = 'jojoshop_orders';
+
+    // Tampilkan badge jumlah pesanan di navbar
+    function updateNavCount(){
+      const countEl = document.getElementById('navCount');
+      const orders = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      if(!countEl) return;
+      if(orders.length>0){ countEl.style.display='inline-block'; countEl.textContent = orders.length; }
+      else { countEl.style.display='none'; }
     }
 
-    function showOrders() {
-        document.getElementById("productContainer").style.display = "none";
-        document.getElementById("orderList").style.display = "block";
-        let orders = JSON.parse(localStorage.getItem("orders")) || [];
-        let ordersContainer = document.getElementById("orders");
-        ordersContainer.innerHTML = "";
+    // Tambah ke orders + buka WhatsApp
+    function handleOrderClick(btn){
+      const product = btn.getAttribute('data-product');
+      const price = btn.getAttribute('data-price');
+      const order = { id: Date.now(), product, price, date: new Date().toLocaleString() };
+      const orders = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      orders.unshift(order);
+      localStorage.setItem(LS_KEY, JSON.stringify(orders));
+      updateNavCount();
 
-        if (orders.length === 0) {
-            ordersContainer.innerHTML = "<p>Tidak ada pesanan.</p>";
-            return;
-        }
-
-        orders.forEach((order, index) => {
-            let div = document.createElement("div");
-            div.classList.add("order-item");
-            div.innerHTML = `
-                ${order.name} - Rp${order.price.toLocaleString()}
-                <button class="delete-btn" onclick="deleteOrder(${index})">Hapus</button>
-            `;
-            ordersContainer.appendChild(div);
-        });
+      const message = `Halo JOJOSHOP, saya ingin memesan:\n\n*Produk:* ${product}\n*Harga:* ${price}\n\nApakah produk ini tersedia?`;
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
     }
 
-    function deleteOrder(index) {
-        let orders = JSON.parse(localStorage.getItem("orders")) || [];
-        orders.splice(index, 1);
-        localStorage.setItem("orders", JSON.stringify(orders));
-        showOrders();
-    }
-
-    function clearOrders() {
-        if (confirm("Yakin hapus semua pesanan?")) {
-            localStorage.removeItem("orders");
-            showOrders();
-        }
-    }
-</script>
-
+    document.addEventListener('DOMContentLoaded',()=>{
+      updateNavCount();
+      document.querySelectorAll('.order-btn').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{ e.preventDefault(); handleOrderClick(btn); });
+      });
+    });
+  </script>
 </body>
 </html>
