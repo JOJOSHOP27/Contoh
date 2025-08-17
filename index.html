@@ -1,51 +1,463 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ramzz Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunzz Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            color: #4A3AFF;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            font-size: 32px;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            color: #777;
+        }
+
+        .info-value {
+            font-weight: 500;
+        }
+
+        .status-badge {
+            background-color: #FFEFD9;
+            color: #FF9500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4A3AFF, #8B7BFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #4A3AFF;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .method-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A3AFF;
+            font-size: 18px;
+        }
+
+        .method-details {
+            flex: 1;
+        }
+
+        .method-name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .method-info {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .virtual-account {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .va-label {
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .va-number {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #4A3AFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #3a2ad0;
+        }
+
+        .payment-details {
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            color: #777;
+        }
+
+        .detail-value {
+            font-weight: 500;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .timer-card {
+            background: linear-gradient(135deg, #4A3AFF, #8B7BFF);
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timer-label {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .timer-display {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: monospace;
+        }
+
+        .timer-note {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #4A3AFF;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3a2ad0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #4A3AFF;
+            border: 2px solid #4A3AFF;
+        }
+
+        .btn-outline:hover {
+            background: #f0f2ff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .payment-card {
+                padding: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Loading -->
-  <div id="loading"></div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Gunzz</span>
+            </div>
+        </div>
 
-  <!-- Popup -->
-  <div id="popup">
-    <h2>Selamat Datang!</h2>
-    <p>Terima kasih telah mengunjungi Ramzz Official Website.</p>
-    <button onclick="document.getElementById('popup').classList.remove('active')">Tutup</button>
-  </div>
+        <div class="payment-card">
+            <h2 class="card-title">Detail Transaksi</h2>
+            
+            <div class="info-row">
+                <span class="info-label">ID Transaksi</span>
+                <span class="info-value">GZ-20230817-001</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Tanggal</span>
+                <span class="info-value">17 Agustus 2023</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Waktu</span>
+                <span class="info-value">14:30 WIB</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Status</span>
+                <span class="status-badge">Menunggu Pembayaran</span>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="product-info">
+                <div class="product-image">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="product-details">
+                    <div class="product-name">Paket Diamond Premium (350 Diamond)</div>
+                    <div class="product-price">Rp 100.000</div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="payment-method">
+                <div class="method-logo">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="method-details">
+                    <div class="method-name">Bank BCA</div>
+                    <div class="method-info">Virtual Account</div>
+                </div>
+            </div>
+            
+            <div class="virtual-account">
+                <div class="va-label">Nomor Virtual Account</div>
+                <div class="va-number">8880 0808 1997 2023</div>
+                <button class="copy-btn" id="copyBtn">
+                    <i class="fas fa-copy"></i> Salin
+                </button>
+            </div>
+            
+            <div class="payment-details">
+                <div class="detail-row">
+                    <span class="detail-label">Harga Produk</span>
+                    <span class="detail-value">Rp 100.000</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="detail-label">Biaya Admin</span>
+                    <span class="detail-value">Rp 2.500</span>
+                </div>
+                
+                <div class="total-row">
+                    <span>Total Pembayaran</span>
+                    <span>Rp 102.500</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timer-card">
+            <div class="timer-label">Selesaikan Pembayaran Dalam</div>
+            <div class="timer-display" id="timer">23:59:58</div>
+            <div class="timer-note">Setelah batas waktu, transaksi akan dibatalkan secara otomatis</div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-outline">
+                <i class="fas fa-question-circle"></i> Instruksi Pembayaran
+            </button>
+            <button class="btn btn-primary">
+                <i class="fas fa-check-circle"></i> Saya Sudah Bayar
+            </button>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Gunzz. Segala bentuk reproduksi dilarang tanpa izin.</p>
+            <p>Customer Support: support@gunzz.id | +62 21 1234 5678</p>
+        </div>
+    </div>
 
-  <!-- Partikel -->
-  <canvas id="particles"></canvas>
-
-  <!-- Konten Utama -->
-  <div class="marquee-container reveal">
-    <div class="marquee-text">🔥 WELCOME TO RAMZZ OFFICIAL • HUBUNGI ADMIN UNTUK PEMBELIAN INJEKTOR, PANEL, DLL 🔥</div>
-  </div>
-
-  <h1 class="reveal">Ramzzy Website</h1>
-  <div class="typewriter reveal"><h2>🔥 RAMZZ OFFICIAL 🔥</h2></div>
-
-  <img src="ramz.png" alt="Logo Ramzz" class="reveal" />
-
-  <p class="reveal">
-    BUY INJECTOR • PANEL • DLL<br>
-    JOIN SALURAN ATAU HUBUNGI ADMIN DI BAWAH
-  </p>
-
-  <a class="button reveal" href="https://wa.me/6283137584867" target="_blank">📱 NO WA RAMZZ REAL [4867]</a>
-  <a class="button reveal" href="https://chat.whatsapp.com/GgQ7b8eQT1N1TyRS54pKNu?mode=ac_t" target="_blank">📱 GB WA [RAMZZY]</a>
-  <a class="button reveal" href="https://whatsapp.com/channel/0029Vb6Xl77L7UVU0TGqdj1W" target="_blank">📱 SALURAN RAMZZY INJEKTOR FREE</a>
-
-  <div class="social-icons reveal">
-    <a href="https://www.tiktok.com/@ramzzi87?_t=ZS-8xesNGLC814&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://youtube.com/@ramzzinjektor?si=OAMM66mbM_NG5KIS" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://wa.me/6283137584867" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-
-  <script src="script.js"></script>
+    <script>
+        // Timer countdown
+        let timeLeft = 23 * 3600 + 59 * 60 + 58; // 23 jam 59 menit 58 detik
+        
+        function updateTimer() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            
+            document.getElementById('timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                document.getElementById('timer').textContent = "00:00:00";
+                document.querySelector('.status-badge').textContent = "Kadaluarsa";
+                document.querySelector('.status-badge').style.backgroundColor = "#ffe5e5";
+                document.querySelector('.status-badge').style.color = "#ff3b30";
+            }
+        }
+        
+        // Copy virtual account number
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const vaNumber = "8880080819972023";
+            navigator.clipboard.writeText(vaNumber)
+                .then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+                    this.style.backgroundColor = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.backgroundColor = '#4A3AFF';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Gagal menyalin: ', err);
+                });
+        });
+        
+        // Initialize timer
+        updateTimer();
+    </script>
 </body>
 </html>
