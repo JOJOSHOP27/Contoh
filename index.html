@@ -881,8 +881,8 @@
             
             <form id="orderForm">
                 <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
-                    <input type="text" id="name" class="form-control" placeholder="Masukkan nama lengkap" required>
+                    <label for="name">Request Nama panel</label>
+                    <input type="text" id="name" class="form-control" placeholder="Masukkan Request Nama panel" required>
                 </div>
                 
                 <div class="form-group">
@@ -893,11 +893,6 @@
                 <div class="form-group">
                     <label for="phone">Nomor WhatsApp</label>
                     <input type="tel" id="phone" class="form-control" placeholder="Contoh: 628123456789" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">Catatan Tambahan</label>
-                    <textarea id="notes" class="form-control" placeholder="Spesifikasi khusus, nama domain, dll." rows="3"></textarea>
                 </div>
                 
                 <div class="order-summary">
@@ -1125,7 +1120,7 @@
         </section>
         
         <div class="whatsapp-float">
-            <a href="https://wa.me/628123456789" target="_blank" style="color: white;">
+            <a href="https://wa.me/6283161207895" target="_blank" style="color: white;">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
@@ -1229,14 +1224,13 @@
                                `*Nama:* ${name}\n` +
                                `*Email:* ${email}\n` +
                                `*WhatsApp:* ${phone}\n\n` +
-                               `*Catatan Tambahan:*\n${notes || 'Tidak ada catatan'}\n\n` +
                                `Saya ingin melanjutkan pembayaran.`;
                 
                 // Encode message for URL
                 const encodedMessage = encodeURIComponent(message);
                 
                 // Create WhatsApp URL
-                const whatsappUrl = `https://wa.me/628123456789?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/6283161207895?text=${encodedMessage}`;
                 
                 // Close modal
                 closeOrderModal();
